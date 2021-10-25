@@ -15,9 +15,25 @@
 
 <h1>Recognize Plate Number from image</h1>
 <p><p>
-  <img src="https://localhost:44350/Algorithm/jeep.jpg">
+  <div>1. Upload a jpg file from your computer.</div>
 <p><p>
-  Recognized plate number: <h2>HTM 2102</h2>
+  <input #file type="file" multiple (change)="upload(file.files)" />
+  <br />
+  <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+    {{progress}}%
+  </span>
+
+  <span style="font-weight:bold;color:green;" *ngIf="message">
+    {{message}}
+  </span>
+<p><p>
+  <div>2. Click Start recognize button to start recognition.</div>
+<p><p>
+  <div><button type="button">START RECOGNIZE</button></div>
+<p><p>
+  <div><img src="https://localhost:44350/Algorithm/jeep.jpg"></div>
+<p><p>
+  <div>Recognized plate number: <h2>HTM 2102</h2></div>
 
   <!--<input type="file" class="file-upload" onchange="console.log(event.target.files)">-->
-  
+
